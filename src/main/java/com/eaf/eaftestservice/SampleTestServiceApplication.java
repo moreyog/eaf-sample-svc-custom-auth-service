@@ -2,16 +2,17 @@ package com.eaf.eaftestservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Controller;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 @RestController
-public class EafTestServiceApplication {
+@ComponentScan("com.eaf")
+public class SampleTestServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EafTestServiceApplication.class, args);
+		SpringApplication.run(SampleTestServiceApplication.class, args);
 	}
 
 	@GetMapping("/")

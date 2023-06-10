@@ -9,10 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.eaf</groupId>
-	<artifactId>efa-restorent-service</artifactId>
+	<artifactId>eaf-sample-svc-custom-auth-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>efa-restorent-service</name>
+	<name>eaf-sample-svc-custom-auth-service</name>
 	<description>Enterprise Application Framework</description>
+<!--	<packaging>maven-archetype</packaging>-->
 	<properties>
 		<java.version>18</java.version>
 		<maven.compiler.source>18</maven.compiler.source>
@@ -32,6 +33,11 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.eaf</groupId>
+			<artifactId>eaf-security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -39,6 +45,25 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-archetype-plugin</artifactId>
+				<version>3.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>create-from-project</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.archetype</groupId>
+				<artifactId>archetype-packaging</artifactId>
+				<version>3.0.1</version>
+			</extension>
+		</extensions>
 	</build>
 </project>
